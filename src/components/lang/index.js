@@ -3,7 +3,7 @@ import React from 'react'
 // import { useTranslation } from 'react-i18next'
 import i18n from '../../config/translations'
 
-const Language = () => {
+const Lang = () => {
   // const { t, i18n } = useTranslation()
   // const isLanguage = () => {
   //   if (i18n.lng === 'fr') {
@@ -27,4 +27,4 @@ const Language = () => {
   )
 }
 
-export default Language
+export default Lang

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 import Routes from '../../config/router'
@@ -6,16 +7,15 @@ import Routes from '../../config/router'
 import { useTranslation } from 'react-i18next'
 
 import { StyledNav, StyledUl, StyledLink } from './Nav.styled'
-import Language from '../language'
+import Lang from '../lang'
 
-// eslint-disable-next-line no-unused-vars
-const Header = props => {
+const Header = ({ open }) => {
   const { t } = useTranslation()
 
   return (
     <header>
       <Router>
-        <StyledNav>
+        <StyledNav open={open}>
           <StyledUl>
             <StyledLink>
               <Link to='/'>{t('nav.home')}</Link>
@@ -24,7 +24,7 @@ const Header = props => {
               <Link to='/about'>{t('nav.about')}</Link>
             </StyledLink>
             {/* <StyledLink> */}
-            <Language />
+            <Lang />
             {/* </StyledLink> */}
           </StyledUl>
         </StyledNav>
@@ -33,6 +33,10 @@ const Header = props => {
       </Router>
     </header>
   )
+}
+
+Header.propTypes = {
+  open: PropTypes.bool.isRequired
 }
 
 export default Header
