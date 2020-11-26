@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import ReactTooltip from 'react-tooltip'
 import './home.css'
 
-import MapChart from '../components/MapChart.js'
+import MapChart from '../components/map/MapChart.js'
 
 function Home() {
   const [content, setContent] = useState('')
