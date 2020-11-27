@@ -1,8 +1,7 @@
-import { useTranslation } from 'react-i18next'
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import ReactTooltip from 'react-tooltip'
 import './home.css'
-
 import MapChart from '../components/map/MapChart.js'
 
 const Home = () => {
@@ -16,6 +15,5 @@ const Home = () => {
     </div>
   )
 }
-
 
 export default Home

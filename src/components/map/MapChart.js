@@ -6,6 +6,7 @@ import {
   Geographies,
   Geography
 } from 'react-simple-maps'
+import PropTypes from 'prop-types'
 
 const geoUrl =
   'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json'
@@ -61,6 +62,7 @@ const MapChart = ({ setTooltipContent }) => {
     </>
   )
 }
+
 MapChart.propTypes = {
   setTooltipContent: PropTypes.any
 }
