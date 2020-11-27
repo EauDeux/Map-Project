@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next'
 
 import { StyledNav, StyledUl, StyledLink } from './Nav.styled'
 import Lang from '../lang'
+import ThemeSelector from '../themeSelector'
 
 const Header = ({ open }) => {
   const { t } = useTranslation()
@@ -25,6 +26,7 @@ const Header = ({ open }) => {
             </StyledLink>
             {/* <StyledLink> */}
             <Lang />
+            <ThemeSelector />
             {/* </StyledLink> */}
           </StyledUl>
         </StyledNav>
