@@ -1,23 +1,31 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 import Routes from '../../config/router'
 
-import { StyledNav, StyledUl, StyledLink } from './Nav.styled'
+import { useTranslation } from 'react-i18next'
 
-// eslint-disable-next-line no-unused-vars
-const Header = props => {
+import { StyledNav, StyledUl, StyledLink } from './Nav.styled'
+import Lang from '../lang'
+
+const Header = ({ open }) => {
+  const { t } = useTranslation()
+
   return (
     <header>
       <Router>
-        <StyledNav>
+        <StyledNav open={open}>
           <StyledUl>
             <StyledLink>
-              <Link to='/'>Home</Link>
+              <Link to='/'>{t('nav.home')}</Link>
             </StyledLink>
             <StyledLink>
-              <Link to='/about'>A propos de nous</Link>
+              <Link to='/about'>{t('nav.about')}</Link>
             </StyledLink>
+            {/* <StyledLink> */}
+            <Lang />
+            {/* </StyledLink> */}
           </StyledUl>
         </StyledNav>
 
@@ -25,6 +33,10 @@ const Header = props => {
       </Router>
     </header>
   )
+}
+
+Header.propTypes = {
+  open: PropTypes.bool.isRequired
 }
 
 export default Header
