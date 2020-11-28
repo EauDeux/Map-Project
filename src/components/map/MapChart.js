@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { memo, useState, useEffect } from 'react'
 import {
   ZoomableGroup,
   ComposableMap,
@@ -6,6 +6,7 @@ import {
   Geography
 } from 'react-simple-maps'
 import PropTypes from 'prop-types'
+import { store } from '../../config/store'
 
 const geoUrl =
   'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json'
@@ -21,11 +22,18 @@ const rounded = num => {
 }
 
 const MapChart = ({ setTooltipContent }) => {
+  const popup = store.getState().popup.popup
+  const [currentPopup, setPopup] = useState({
+    setTooltipContent: ''
+  })
+  useEffect(() => {
+    setPopup(popup)
+  }, [popup])
   return (
     <>
       <ComposableMap data-tip='' projectionConfig={{ scale: 200 }}>
         <ZoomableGroup>
-          <Geographies geography={geoUrl}>
+          <Geographies geography={geoUrl} popup={currentPopup}>
             {({ geographies }) =>
               geographies.map(geo => (
                 <Geography
@@ -37,6 +45,9 @@ const MapChart = ({ setTooltipContent }) => {
                   }}
                   onMouseLeave={() => {
                     setTooltipContent('')
+                  }}
+                  onClick={() => {
+                    setTooltipContent('test')
                   }}
                   style={{
                     default: {

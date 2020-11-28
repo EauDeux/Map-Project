@@ -16,6 +16,7 @@ function App() {
   const [open, setOpen] = useState(false)
   const node = useRef()
   useOnClickOutside(node, () => setOpen(false))
+  // useSelector ne fonctionne pas à la racine d'une app
   // const theme = useSelector((state: any) => state.theme)
   const theme = store.getState().theme.theme
   console.log(theme)
