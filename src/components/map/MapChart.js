@@ -7,9 +7,12 @@ import {
 } from 'react-simple-maps'
 import PropTypes from 'prop-types'
 import { store } from '../../config/store'
+import MapJson from '../../assets/map/jsonGeo'
 
-const geoUrl =
-  'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json'
+// const geoUrl =
+//   'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json'
+
+const geoUrl = MapJson
 
 const rounded = num => {
   if (num > 1000000000) {
@@ -40,8 +43,17 @@ const MapChart = ({ setTooltipContent }) => {
                   key={geo.rsmKey}
                   geography={geo}
                   onMouseEnter={() => {
-                    const { NAME, POP_EST } = geo.properties
-                    setTooltipContent(`${NAME} — ${rounded(POP_EST)}`)
+                    const {
+                      NAME,
+                      POP_EST,
+                      DEVISE_FR,
+                      DEVISE_MON
+                    } = geo.properties
+                    setTooltipContent(
+                      `${NAME} — ${rounded(
+                        POP_EST
+                      )} — ${DEVISE_FR} — ${DEVISE_MON}`
+                    )
                   }}
                   onMouseLeave={() => {
                     setTooltipContent('')
