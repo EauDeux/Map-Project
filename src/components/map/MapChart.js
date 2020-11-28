@@ -4,25 +4,26 @@ import {
   ComposableMap,
   Geographies,
   Geography
-} from "react-simple-maps";
+} from 'react-simple-maps'
+import PropTypes from 'prop-types'
 
 const geoUrl =
-  "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
+  'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json'
 
 const rounded = num => {
   if (num > 1000000000) {
-    return Math.round(num / 100000000) / 10 + "Bn";
+    return Math.round(num / 100000000) / 10 + 'Bn'
   } else if (num > 1000000) {
-    return Math.round(num / 100000) / 10 + "M";
+    return Math.round(num / 100000) / 10 + 'M'
   } else {
-    return Math.round(num / 100) / 10 + "K";
+    return Math.round(num / 100) / 10 + 'K'
   }
-};
+}
 
 const MapChart = ({ setTooltipContent }) => {
   return (
     <>
-      <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
+      <ComposableMap data-tip='' projectionConfig={{ scale: 200 }}>
         <ZoomableGroup>
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
@@ -31,24 +32,24 @@ const MapChart = ({ setTooltipContent }) => {
                   key={geo.rsmKey}
                   geography={geo}
                   onMouseEnter={() => {
-                    const { NAME, POP_EST } = geo.properties;
-                    setTooltipContent(`${NAME} — ${rounded(POP_EST)}`);
+                    const { NAME, POP_EST } = geo.properties
+                    setTooltipContent(`${NAME} — ${rounded(POP_EST)}`)
                   }}
                   onMouseLeave={() => {
-                    setTooltipContent("");
+                    setTooltipContent('')
                   }}
                   style={{
                     default: {
-                      fill: "#D6D6DA",
-                      outline: "none"
+                      fill: '#D6D6DA',
+                      outline: 'none'
                     },
                     hover: {
-                      fill: "#F53",
-                      outline: "none"
+                      fill: '#F53',
+                      outline: 'none'
                     },
                     pressed: {
-                      fill: "#E42",
-                      outline: "none"
+                      fill: '#E42',
+                      outline: 'none'
                     }
                   }}
                 />
@@ -58,7 +59,11 @@ const MapChart = ({ setTooltipContent }) => {
         </ZoomableGroup>
       </ComposableMap>
     </>
-  );
-};
+  )
+}
 
-export default memo(MapChart);
+MapChart.propTypes = {
+  setTooltipContent: PropTypes.any
+}
+
+export default memo(MapChart)
