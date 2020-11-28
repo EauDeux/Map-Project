@@ -38663,6 +38663,10 @@
           "type": "MultiPolygon",
           "properties": {
             "NAME": "Russia",
+            "NAME_FR": "Russie",
+            "DEVISE_MON": "Rouble russe",
+            "DEVISE_FR": "La patrie ou la mort, nous vaincrons !",
+            "DEVISE_EN": "Homeland or death, we will win!",
             "NAME_LONG": "Russian Federation",
             "ABBREV": "Rus.",
             "FORMAL_EN": "Russian Federation",
@@ -39661,6 +39665,10 @@
           "type": "MultiPolygon",
           "properties": {
             "NAME": "United States of America",
+            "NAME_FR": "Etats Unis D'Amérique",
+            "DEVISE_FR": "Nous croyons en Dieu",
+            "DEVISE_EN": "In God We Trust",
+            "DEVISE_MON": "Dollar américain",
             "NAME_LONG": "United States",
             "ABBREV": "U.S.A.",
             "FORMAL_EN": "United States of America",
