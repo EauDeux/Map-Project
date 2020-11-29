@@ -1,8 +1,8 @@
 import * as Actions from '../actions/theme'
-import { darkTheme } from '../config/theme'
+import { lightTheme } from '../config/theme'
 
 const initialState = {
-  theme: darkTheme
+  theme: lightTheme
 }
 
 export const theme = (state: any = initialState, action: any) => {
