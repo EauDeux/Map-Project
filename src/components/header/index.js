@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next'
 import { StyledNav, StyledUl, StyledLink } from './Nav.styled'
 import Lang from '../lang'
 import ThemeSelector from '../themeSelector'
+import Logout from '../logout'
 
 const Header = ({ open }) => {
   const { t } = useTranslation()
@@ -18,11 +19,15 @@ const Header = ({ open }) => {
       <Router>
         <StyledNav open={open}>
           <StyledUl>
+            <Logout></Logout>
             <StyledLink>
               <Link to='/'>{t('nav.home')}</Link>
             </StyledLink>
             <StyledLink>
               <Link to='/about'>{t('nav.about')}</Link>
+            </StyledLink>
+            <StyledLink>
+              <Link to='/favoris'>{t('nav.favoris')}</Link>
             </StyledLink>
             {/* <StyledLink> */}
             <Lang />

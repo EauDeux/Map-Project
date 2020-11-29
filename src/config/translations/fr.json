@@ -2,7 +2,8 @@
   "translation": {
     "nav": {
       "home": "Home",
-      "about": "A propos de nous"
+      "about": "A propos de nous",
+      "favoris": "Favoris"
     }  
   }
 }
