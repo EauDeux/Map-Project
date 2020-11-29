@@ -1,30 +1,42 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 import { ThemeProvider } from 'styled-components'
 import Header from '../components/header'
 import BurgerMenu from '../components/burgerMenu'
-import { theme } from '../config/theme'
+// import { darkTheme } from '../config/theme'
 import '../config/translations'
-
 import { GlobalStyle } from '../config/globalStyle'
-
 import { useOnClickOutside } from '../hooks/useOnClickOutside'
+
+//Redux
+import { Provider } from 'react-redux'
+import { store } from '../config/store'
 
 function App() {
   const [open, setOpen] = useState(false)
   const node = useRef()
   useOnClickOutside(node, () => setOpen(false))
+  // useSelector ne fonctionne pas à la racine d'une app
+  // const theme = useSelector((state: any) => state.theme)
+  const theme = store.getState().theme.theme
+  console.log(theme)
+  const [currentTheme, setTheme] = useState({})
+  useEffect(() => {
+    setTheme(theme)
+  }, [theme])
 
   return (
-    <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyle />
-        <div ref={node}>
-          <BurgerMenu open={open} setOpen={setOpen} />
-          <Header open={open} setOpen={setOpen} />
-        </div>
-      </>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={currentTheme}>
+        <>
+          <GlobalStyle />
+          <div ref={node}>
+            <BurgerMenu open={open} setOpen={setOpen} />
+            <Header open={open} setOpen={setOpen} />
+          </div>
+        </>
+      </ThemeProvider>
+    </Provider>
   )
 }
 
