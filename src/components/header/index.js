@@ -24,6 +24,9 @@ const Header = ({ open }) => {
             <StyledLink>
               <Link to='/about'>{t('nav.about')}</Link>
             </StyledLink>
+            <StyledLink>
+              <Link to='/favorite'>{t('nav.favorite')}</Link>
+            </StyledLink>
             {/* <StyledLink> */}
             <Lang />
             <ThemeSelector />

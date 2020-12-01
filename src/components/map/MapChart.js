@@ -9,9 +9,6 @@ import PropTypes from 'prop-types'
 import { store } from '../../config/store'
 import MapJson from '../../assets/map/jsonGeo'
 
-// const geoUrl =
-//   'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json'
-
 const geoUrl = MapJson
 
 const rounded = num => {
@@ -32,6 +29,7 @@ const MapChart = ({ setTooltipContent }) => {
   useEffect(() => {
     setPopup(popup)
   }, [popup])
+
   return (
     <>
       <ComposableMap data-tip='' projectionConfig={{ scale: 200 }}>
@@ -52,14 +50,15 @@ const MapChart = ({ setTooltipContent }) => {
                     setTooltipContent(
                       `${NAME} — ${rounded(
                         POP_EST
-                      )} — ${DEVISE_FR} — ${DEVISE_MON}`
+                      )} — ${DEVISE_FR} — ${DEVISE_MON} `
                     )
                   }}
                   onMouseLeave={() => {
                     setTooltipContent('')
                   }}
                   onClick={() => {
-                    setTooltipContent('test')
+                    const { NAME, PLUS, MOINS } = geo.properties
+                    setTooltipContent(`${NAME} — ${PLUS} — ${MOINS}`)
                   }}
                   style={{
                     default: {
