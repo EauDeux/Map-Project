@@ -15,7 +15,11 @@ const Favoris = () => {
     <div>
       <h1>{t('nav.favoris')}</h1>
       {fav.map(f => {
-        return <p key={f.name}>{f.name} </p>
+        return (
+          <p key={f.name}>
+            {f.name} {f.content}{' '}
+          </p>
+        )
       })}
     </div>
   )
