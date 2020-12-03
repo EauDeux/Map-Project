@@ -18,6 +18,7 @@ const Routes = () => {
       <PrivateRoute path='/favoris' component={Favoris} />
       <Route path='/about' component={About} />
       <Route path='/ErrorPage' component={ErrorPage} />
+      <Route path='/Favorite' component={Favoris} />
       <Redirect to='/ErrorPage'></Redirect>
     </Switch>
   )

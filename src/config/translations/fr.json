@@ -3,7 +3,11 @@
     "nav": {
       "home": "Home",
       "about": "A propos de nous",
+<<<<<<< HEAD
       "favoris": "Favoris"
+=======
+      "favorite": "Favoris"
+>>>>>>> 3ccbc3aab2cd553f6020c463cfe15341c4a7d29e
     }  
   }
 }
