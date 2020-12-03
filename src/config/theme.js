@@ -8,7 +8,7 @@
 
 export const lightTheme = {
   primary: '#E2E2E2',
-  primaryLight: 'blue',
+  primaryLight: '#BDBDBD',
   text: '#363537',
   mobile: '576px'
   // background: '#ffffff',
@@ -18,7 +18,7 @@ export const lightTheme = {
 export const darkTheme = {
   primary: '#363537',
   primaryLight: 'grey',
-  text: '#FAFAFA',
+  text: '#E2E2E2',
   mobile: '576px'
   // background: '#323232',
   // text: '#ffffff'

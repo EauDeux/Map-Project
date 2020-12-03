@@ -38,12 +38,12 @@ export const StyledLink = styled.a`
   display: block;
   margin-right: 10px; */
 
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   padding: 2rem 0;
   font-weight: bold;
-  letter-spacing: 0.5rem;
-  color: ${({ theme }) => theme.primaryDark};
+  letter-spacing: 0.2rem;
+  /* color: ${({ theme }) => theme.primaryDark}; */
   text-decoration: none;
   transition: color 0.3s linear;
 
