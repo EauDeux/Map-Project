@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: black;
+    color: ${({ theme }) => theme.text};
   }
 
   /* .rsm-svg{

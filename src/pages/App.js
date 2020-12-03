@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useLayoutEffect } from 'react'
 
 import { ThemeProvider } from 'styled-components'
 import Header from '../components/header'
@@ -11,6 +11,7 @@ import { useOnClickOutside } from '../hooks/useOnClickOutside'
 //Redux
 import { Provider } from 'react-redux'
 import { store } from '../config/store'
+// import { darkTheme, lightTheme } from '../config/theme'
 
 function App() {
   const [open, setOpen] = useState(false)
@@ -21,7 +22,7 @@ function App() {
   const theme = store.getState().theme.theme
   console.log(theme)
   const [currentTheme, setTheme] = useState({})
-  useEffect(() => {
+  useLayoutEffect(() => {
     setTheme(theme)
   }, [theme])
 

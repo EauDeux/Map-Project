@@ -19,7 +19,11 @@ const Header = ({ open }) => {
       <Router>
         <StyledNav open={open}>
           <StyledUl>
-            <Logout></Logout>
+            <StyledLink>
+              <Lang />
+              <ThemeSelector />
+              <Logout></Logout>
+            </StyledLink>
             <StyledLink>
               <Link to='/'>{t('nav.home')}</Link>
             </StyledLink>
@@ -29,10 +33,6 @@ const Header = ({ open }) => {
             <StyledLink>
               <Link to='/favoris'>{t('nav.favoris')}</Link>
             </StyledLink>
-            {/* <StyledLink> */}
-            <Lang />
-            <ThemeSelector />
-            {/* </StyledLink> */}
           </StyledUl>
         </StyledNav>
 
