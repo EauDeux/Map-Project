@@ -3,7 +3,7 @@
     "nav": {
       "home": "Home",
       "about": "A propos de nous",
-      "favorite": "Favoris"
+      "favoris": "Favoris"
     }  
   }
 }

@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
-import { useTranslation } from 'react-i18next'
+// import { useTranslation } from 'react-i18next'
 import ReactTooltip from 'react-tooltip'
 import './home.css'
-import MapChart from '../components/map/MapChart.js'
+import MapChart from '../components/mapChart/index.js'
 
 const Home = () => {
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
   const [content, setContent] = useState('')
 
   return (
     <div>
-      <h1>{t('nav.home')}</h1>
+      {/* <h1>{t('nav.home')}</h1> */}
       <MapChart setTooltipContent={setContent} />
       <ReactTooltip>{content}</ReactTooltip>
     </div>
