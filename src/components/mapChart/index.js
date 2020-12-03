@@ -7,7 +7,7 @@ import {
 } from 'react-simple-maps'
 import PropTypes from 'prop-types'
 import { store } from '../../config/store'
-import MapJson from '../../assets/map/jsonGeo'
+import MapJson from '../../assets/json/jsonGeo.json'
 // import { Map } from './Map.styled'
 
 // const geoUrl =
@@ -60,8 +60,8 @@ const MapChart = ({ setTooltipContent }) => {
                   setTooltipContent('')
                 }}
                 onClick={() => {
-                  const { NAME } = geo.properties
-                  setTooltipContent(`${NAME} - test `)
+                  const { NAME, PLUS, MOINS } = geo.properties
+                  setTooltipContent(`${NAME} — ${PLUS} — ${MOINS}`)
                 }}
                 style={{
                   default: {
