@@ -77,13 +77,15 @@ const MapChart = ({ setTooltipContent }) => {
                     NAME,
                     POP_EST,
                     DEVISE_FR,
-                    DEVISE_MON
+                    DEVISE_MON,
+                    PLUS,
+                    MOINS
                   } = geo.properties
                   handleFavorite({
                     name: NAME,
                     content: `${NAME} — ${rounded(
                       POP_EST
-                    )} — ${DEVISE_FR} — ${DEVISE_MON}`
+                    )} — ${DEVISE_FR} — ${DEVISE_MON} - ${PLUS} - ${MOINS}`
                   })
                 }}
                 style={{
