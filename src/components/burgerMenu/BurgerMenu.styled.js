@@ -18,27 +18,38 @@ export const StyledBurgerMenu = styled.button`
   &:focus {
     outline: none;
   }
+`
 
-  div {
-    width: 2rem;
-    height: 0.25rem;
-    background: ${({ theme, open }) => (open ? theme.primary : theme.text)};
-    border-radius: 10px;
-    transition: all 0.3s linear;
-    position: relative;
-    transform-origin: 1px;
+export const StyledDivOne = styled.div`
+  width: 2rem;
+  height: 0.25rem;
+  background: ${({ theme, open }) => (open ? theme.primary : theme.text)};
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+  transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};
+`
 
-    :first-child {
-      transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};
-    }
+export const StyledDivTwo = styled.div`
+  width: 2rem;
+  height: 0.25rem;
+  background: ${({ theme, open }) => (open ? theme.primary : theme.text)};
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+  opacity: ${({ open }) => (open ? '0' : '1')};
+  transform: ${({ open }) => (open ? 'translateX(20px)' : 'translateX(0)')};
+`
 
-    :nth-child(2) {
-      opacity: ${({ open }) => (open ? '0' : '1')};
-      transform: ${({ open }) => (open ? 'translateX(20px)' : 'translateX(0)')};
-    }
-
-    :nth-child(3) {
-      transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
-    }
-  }
+export const StyledDivThree = styled.div`
+  width: 2rem;
+  height: 0.25rem;
+  background: ${({ theme, open }) => (open ? theme.primary : theme.text)};
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+  transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
 `

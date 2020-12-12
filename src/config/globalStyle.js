@@ -20,29 +20,6 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.text};
   }
 
-  /* .rsm-svg{
-    width: 100%;
-    height: 100vh;
-  }
-
-  .rsm-geographies{
-    width: 100%;
-    height: 100vh;
-  } */
-
-  /* default: {
-    fill: '#D6D6DA',
-    outline: 'none'
-  }
-  hover: {
-    fill: '#F53',
-    outline: 'none'
-  }
-  pressed: {
-    fill: '#E42',
-    outline: 'none'
-  } */
-
 `
 
 export { GlobalStyle }

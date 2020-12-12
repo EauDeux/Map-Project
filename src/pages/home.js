@@ -5,12 +5,10 @@ import './home.css'
 import MapChart from '../components/mapChart/index.js'
 
 const Home = () => {
-  // const { t } = useTranslation()
   const [content, setContent] = useState('')
 
   return (
     <div>
-      {/* <h1>{t('nav.home')}</h1> */}
       <MapChart setTooltipContent={setContent} />
       <ReactTooltip>{content}</ReactTooltip>
     </div>

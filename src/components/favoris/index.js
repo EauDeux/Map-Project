@@ -28,13 +28,7 @@ const Fav = () => {
               <p>
                 {f.name} {f.content}{' '}
               </p>
-              <StyledButton
-                theme={{ main: 'red' }}
-                onClick={Delete}
-                // onClick={() => {
-                //   JSON.parse(localStorage.removeItem('currentFavorite', ' '))
-                // }}
-              >
+              <StyledButton theme={{ main: 'red' }} onClick={Delete}>
                 Supprimer
               </StyledButton>
             </StyledCard>

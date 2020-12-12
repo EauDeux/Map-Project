@@ -1,18 +1,8 @@
-// const theme = {
-//   primary: 'gold',
-//   primaryLight: 'grey',
-//   mobile: '576px'
-// }
-
-// export { theme }
-
 export const lightTheme = {
   primary: '#E2E2E2',
   primaryLight: '#BDBDBD',
   text: '#363537',
   mobile: '576px'
-  // background: '#ffffff',
-  // text: '#313131'
 }
 
 export const darkTheme = {
@@ -20,6 +10,4 @@ export const darkTheme = {
   primaryLight: 'grey',
   text: '#E2E2E2',
   mobile: '576px'
-  // background: '#323232',
-  // text: '#ffffff'
 }

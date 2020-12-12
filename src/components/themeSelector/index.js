@@ -8,18 +8,7 @@ import { ReactComponent as Moon } from '../../assets/svg/moon.svg'
 
 const ThemeSelector = () => {
   const dispatch = useDispatch()
-  // const theme = store.getState().theme.theme
   const changeTheme = (theme: any) => {
-    // theme === 'light'
-    //   ? dispatch(applyTheme(theme))
-    //   : dispatch(applyTheme(theme))
-    // if (theme === 'darkTheme') {
-    //   dispatch(applyTheme(theme))
-    //   // setTheme('darkTheme')
-    // } else {
-    // dispatch(applyTheme(theme))
-    //   // setTheme('lightTheme')
-    // }
     dispatch(applyTheme(theme))
     console.log(theme)
   }

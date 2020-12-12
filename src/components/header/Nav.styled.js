@@ -1,15 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledNav = styled.nav`
-  /* background-color: gold;
-  width: 100%;
-  height: 50px;
   display: flex;
-  align-items: center;
-  color: white; */
-  display: flex;
-  /* flex-direction: column;
-  justify-content: center; */
   background: ${({ theme }) => theme.primaryLight};
   height: 100vh;
   text-align: left;
@@ -33,11 +25,6 @@ export const StyledUl = styled.ul`
 `
 
 export const StyledLink = styled.a`
-  /* text-decoration: none;
-  color: white;
-  display: block;
-  margin-right: 10px; */
-
   font-size: 1.5rem;
   text-transform: uppercase;
   padding: 2rem 0;
