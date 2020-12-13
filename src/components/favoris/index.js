@@ -14,9 +14,7 @@ const Fav = () => {
   })
   const Delete = () => {
     const currentFavorite = localStorage.getItem('favorite')
-    JSON.parse(
-      localStorage.removeItem('favorite', JSON.stringify(currentFavorite))
-    )
+    JSON.parse(localStorage.removeItem(JSON.stringify(currentFavorite)))
   }
   return (
     <div>
