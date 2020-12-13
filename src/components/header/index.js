@@ -43,6 +43,3 @@ Header.propTypes = {
 }
 
 export default Header
-
-//
-//<Header open={open} setOpen={setOpen} />

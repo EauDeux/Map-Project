@@ -7,10 +7,7 @@ import { StyledButton } from './Button.styled'
 
 const Logout = () => {
   const history = useHistory()
-  // const dispatch = useDispatch()
-  // const isLog = (token: any) => {
-  //   dispatch(applyToken)
-  // }
+
   const isToken = localStorage.getItem('token')
 
   const handleLogout = () => {
