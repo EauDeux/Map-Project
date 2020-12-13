@@ -1,18 +1,30 @@
 import React, { useState, useRef, useLayoutEffect } from 'react'
 
 import { ThemeProvider } from 'styled-components'
-import Header from '../components/header'
-import BurgerMenu from '../components/burgerMenu'
 import '../config/translations'
 import { GlobalStyle } from '../config/globalStyle'
 import { useOnClickOutside } from '../hooks/useOnClickOutside'
+import Router from '../config/router'
 
 //Redux
 import { Provider } from 'react-redux'
 import { store } from '../config/store'
-// import { darkTheme, lightTheme } from '../config/theme'
 
+//firebase
+import firebase from '../config/firebase'
 function App() {
+  React.useEffect(() => {
+    const msg = firebase.messaging()
+    msg
+      .requestPermission()
+      .then(() => {
+        return msg.getToken()
+      })
+      .then(data => {
+        console.warn('token', data)
+      })
+  })
+  // eslint-disable-next-line no-unused-vars
   const [open, setOpen] = useState(false)
   const node = useRef()
   useOnClickOutside(node, () => setOpen(false))
@@ -31,8 +43,7 @@ function App() {
         <>
           <GlobalStyle />
           <div ref={node}>
-            <BurgerMenu open={open} setOpen={setOpen} />
-            <Header open={open} setOpen={setOpen} />
+            <Router></Router>
           </div>
         </>
       </ThemeProvider>

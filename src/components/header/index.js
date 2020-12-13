@@ -1,8 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-
-import { BrowserRouter as Router, Link } from 'react-router-dom'
-import Routes from '../../config/router'
+import { Link } from 'react-router-dom'
 
 import { useTranslation } from 'react-i18next'
 
@@ -10,35 +8,33 @@ import { StyledNav, StyledUl, StyledLink } from './Nav.styled'
 import Lang from '../lang'
 import ThemeSelector from '../themeSelector'
 import Logout from '../logout'
+import BurgerMenu from '../burgerMenu'
 
-const Header = ({ open }) => {
+const Header = () => {
   const { t } = useTranslation()
-
+  const [open, setOpen] = useState(false)
   return (
-    <header>
-      <Router>
-        <StyledNav open={open}>
-          <StyledUl>
-            <StyledLink>
-              <Lang />
-              <ThemeSelector />
-              <Logout></Logout>
-            </StyledLink>
-            <StyledLink>
-              <Link to='/'>{t('nav.home')}</Link>
-            </StyledLink>
-            <StyledLink>
-              <Link to='/about'>{t('nav.about')}</Link>
-            </StyledLink>
-            <StyledLink>
-              <Link to='/favoris'>{t('nav.favoris')}</Link>
-            </StyledLink>
-          </StyledUl>
-        </StyledNav>
-
-        <Routes></Routes>
-      </Router>
-    </header>
+    <>
+      <BurgerMenu open={open} setOpen={setOpen} />
+      <StyledNav open={open}>
+        <StyledUl>
+          <StyledLink>
+            <Lang />
+            <ThemeSelector />
+            <Logout></Logout>
+          </StyledLink>
+          <StyledLink>
+            <Link to='/'>{t('nav.home')}</Link>
+          </StyledLink>
+          <StyledLink>
+            <Link to='/about'>{t('nav.about')}</Link>
+          </StyledLink>
+          <StyledLink>
+            <Link to='/favoris'>{t('nav.favoris')}</Link>
+          </StyledLink>
+        </StyledUl>
+      </StyledNav>
+    </>
   )
 }
 
@@ -47,3 +43,6 @@ Header.propTypes = {
 }
 
 export default Header
+
+//
+//<Header open={open} setOpen={setOpen} />
